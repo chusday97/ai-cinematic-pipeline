@@ -6,20 +6,30 @@ The repository is organized around 16 reusable `SKILL.md` modules. Each module e
 
 > 这是一个面向 AI 短剧与影视生成的模块化 Skill 工作流库。重点不是“让一个 Prompt 包办所有事情”，而是把剧本、人物一致性、场景一致性、镜头语言、动作物理和宣发包装拆成可组合、可复用的专业步骤。
 
+**At a glance:** 16 Agent Skills · AI short drama · Character consistency · Environment continuity · Cinematic prompting · Motion repair · Veo / Kling workflows
+
+[16 skills](#the-16-skills) · [Pipeline](#pipeline-overview) · [Consistency strategy](#character-consistency-strategy) · [Targeted repair](#targeted-repair-instead-of-full-regeneration) · [Evaluation boundaries](#evaluation--claim-boundaries)
+
+```mermaid
+flowchart LR
+  A[Story / Brief] --> B[Script Skills]
+  B --> C[Character & Environment Locks]
+  C --> D[Keyframes & Cinematic Direction]
+  D --> E[Motion / Video Prompt Refinement]
+  E --> F[Veo / Kling / Other Models]
+  F --> G[Short Drama + Marketing Assets]
+```
+
 ## What This Repository Is
 
 This repository is best understood as a **cinematic workflow specification + reusable skill library**, not as a video-generation model or a fully autonomous rendering engine.
 
-It helps structure an AI-assisted production pipeline around four stages:
+It structures an AI-assisted production pipeline around four stages:
 
-```mermaid
-flowchart LR
-  A[Story / Novel / Brief] --> B[Story & Script Skills]
-  B --> C[Character & Environment Consistency]
-  C --> D[Cinematic Keyframes & Motion Design]
-  D --> E[Video Generation Tools]
-  E --> F[Post-production & Marketing Assets]
-```
+1. story and script engineering;
+2. character and environment consistency;
+3. cinematic keyframes and motion refinement;
+4. generation, delivery, and marketing assets.
 
 The value of the project is in the **production constraints encoded between stages**: what information must be preserved, what visual anchors must stay stable, what physical or anatomical failures should be prevented, and what each downstream tool needs as structured input.
 
